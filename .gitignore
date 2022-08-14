@@ -3,3 +3,4 @@ __pycache__/
 sendgrid_pass.txt
 .env
 emails/.env.yaml
+firebase-google-credentials.json
