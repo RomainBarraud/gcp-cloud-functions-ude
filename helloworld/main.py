@@ -1,5 +1,17 @@
 def hello_world(request):
     
+    if request.method == 'OPTIONS':
+        headers = {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST',
+            'Access-Control-Allow-Headers': 'Content-Type',
+            'Access-Control-Max-Age': '3600'
+        }
+        return '', 204, headers
+    headers = {
+        'Access-Control-Allow-Origin': '*'
+    }
+    
     request_args = request.args
     request_json = request.get_json(silent=True)
     if request_args and 'name' in request_args and 'lastname' in request_args:

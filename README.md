@@ -11,6 +11,11 @@ gcloud projects list
 gcloud config set project [PROJECT_ID]
 import secrets
 secrets.token_hex(16)
+git rm -r --cached .
+```
+fetch('https://us-central1-cloud-functions-course-2c8c3.cloudfunctions.net/hello_world', {method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify({'name': 'Romain', 'lastname': 'B.'})}).then(response => response.text()).then(result => console.log(result))
+```
+
 ## deploy (inside function folder)
 ### locally
 functions-framework --target hello_world --debug
